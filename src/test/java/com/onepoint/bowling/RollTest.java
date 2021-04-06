@@ -13,7 +13,7 @@ class RollTest {
 	@Test
 	void isStrikeTest() {
 		// Given
-		Roll roll = new Roll(STRIKE, '0');
+		Roll roll = new Roll(STRIKE, MISS);
 
 		// When
 		boolean strike = roll.isStrike();
@@ -126,7 +126,7 @@ class RollTest {
 	@Test
 	void isValidStrikeTest() {
 		// Given
-		Roll strikeRoll = new Roll(STRIKE, '0');
+		Roll strikeRoll = new Roll(STRIKE, MISS);
 		Roll spareRoll = new Roll('5', SPARE);
 		Roll spareRollWithMiss = new Roll(MISS, SPARE);
 		Roll outBoundScoreRoll = new Roll('8', '9');

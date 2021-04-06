@@ -8,5 +8,8 @@ public class Constantes {
 	public static final int NB_PINS = 10;
 	public static final int NB_ROLLS = 10;
 	public static final int DEFAULT_VALUE = -1;
+	public static final int STARTING_VALUE = '0';
+	public static final int MIN_VALUE = '1';
+	public static final int MAX_VALUE = '9';
 
 }

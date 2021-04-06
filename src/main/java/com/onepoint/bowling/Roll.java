@@ -33,8 +33,8 @@ class Roll {
 	}
 
 	int getScoreForFirstRoll() {
-		if ('9' >= scoreTryOne && '1' <= scoreTryOne) {
-			int res = scoreTryOne - '0';
+		if (MAX_VALUE >= scoreTryOne && MIN_VALUE <= scoreTryOne) {
+			int res = scoreTryOne - STARTING_VALUE;
 			return res;
 		}
 		switch (scoreTryOne) {
@@ -49,8 +49,8 @@ class Roll {
 	}
 
 	int getScoreForSecondRoll() {
-		if ('9' >= scoreTryTwo && '1' <= scoreTryTwo) {
-			int res = scoreTryTwo - '0';
+		if (MAX_VALUE >= scoreTryTwo && MIN_VALUE <= scoreTryTwo) {
+			int res = scoreTryTwo - STARTING_VALUE;
 			return res;
 		}
 		switch (scoreTryTwo) {
@@ -65,8 +65,8 @@ class Roll {
 
 	// check for valid role
 	boolean isValid() {
-		return (scoreTryOne == STRIKE || ((scoreTryOne == MISS || scoreTryOne <= '9' && scoreTryOne >= '1')
-				&& ((scoreTryTwo == SPARE) || ((scoreTryTwo == MISS || scoreTryTwo <= '9' && scoreTryTwo >= '1')
+		return (scoreTryOne == STRIKE || ((scoreTryOne == MISS || scoreTryOne <= MAX_VALUE && scoreTryOne >= MIN_VALUE)
+				&& ((scoreTryTwo == SPARE) || ((scoreTryTwo == MISS || scoreTryTwo <= MAX_VALUE && scoreTryTwo >= MIN_VALUE)
 						&& getScoreForFirstRoll() + getScoreForSecondRoll() <= NB_PINS))));
 	}
 
